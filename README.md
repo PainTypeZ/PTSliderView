@@ -1,9 +1,9 @@
 
 # PTSliderView
 
-一个简单的矩形滑块；参考了HBLockSlider。
+一个简单的矩形滑块，Swift编码；参考了HBLockSlider。
 
-A simple rectangle sliderView;Inspiration from HBLockSlider.
+A simple rectangle slider，coding with Swift；Inspiration from HBLockSlider(Objective-C)
 
 ## Installation
  	

@@ -1,4 +1,4 @@
-platform :ios, '11.4'
+platform :ios, '9.0'
 target 'PTSliderViewDemo' do
 
 use_frameworks!

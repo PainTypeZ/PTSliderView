@@ -12,10 +12,10 @@
 		5265897C20CA6D8B004AB7E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5265897A20CA6D8B004AB7E7 /* Main.storyboard */; };
 		5265897E20CA6D8C004AB7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5265897D20CA6D8C004AB7E7 /* Assets.xcassets */; };
 		5265898120CA6D8C004AB7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5265897F20CA6D8C004AB7E7 /* LaunchScreen.storyboard */; };
-		5265898B20CA6DEA004AB7E7 /* PTSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5265898920CA6DEA004AB7E7 /* PTSliderView.xib */; };
 		5265898C20CA6DEA004AB7E7 /* PTSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265898A20CA6DEA004AB7E7 /* PTSliderView.swift */; };
 		5265898E20CA6F24004AB7E7 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = 5265898D20CA6F24004AB7E7 /* PodFile */; };
 		5276F90720CB6D0A00D50EB8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5276F90620CB6D0A00D50EB8 /* README.md */; };
+		52E7B1A4219BC08B00403C60 /* PTSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E7B1A3219BC08B00403C60 /* PTSliderView.xib */; };
 		610BAB72DDC275B662378DD2 /* Pods_PTSliderViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6459C1BF44F8A911232A3579 /* Pods_PTSliderViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +27,10 @@
 		5265897D20CA6D8C004AB7E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5265898020CA6D8C004AB7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5265898220CA6D8C004AB7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5265898920CA6DEA004AB7E7 /* PTSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PTSliderView.xib; sourceTree = "<group>"; };
 		5265898A20CA6DEA004AB7E7 /* PTSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTSliderView.swift; sourceTree = "<group>"; };
 		5265898D20CA6F24004AB7E7 /* PodFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; };
 		5276F90620CB6D0A00D50EB8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		52E7B1A3219BC08B00403C60 /* PTSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PTSliderView.xib; sourceTree = "<group>"; };
 		6459C1BF44F8A911232A3579 /* Pods_PTSliderViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTSliderViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA0EBC7D5492F1873DB1E49 /* Pods-PTSliderViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTSliderViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTSliderViewDemo/Pods-PTSliderViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A3C67F3ACCDF15134726D7F8 /* Pods-PTSliderViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTSliderViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTSliderViewDemo/Pods-PTSliderViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 		5265898820CA6DEA004AB7E7 /* PTSliderView */ = {
 			isa = PBXGroup;
 			children = (
-				5265898920CA6DEA004AB7E7 /* PTSliderView.xib */,
 				5265898A20CA6DEA004AB7E7 /* PTSliderView.swift */,
+				52E7B1A3219BC08B00403C60 /* PTSliderView.xib */,
 			);
 			path = PTSliderView;
 			sourceTree = "<group>";
@@ -142,6 +142,7 @@
 				TargetAttributes = {
 					5265897220CA6D8B004AB7E7 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -169,11 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5276F90720CB6D0A00D50EB8 /* README.md in Resources */,
+				52E7B1A4219BC08B00403C60 /* PTSliderView.xib in Resources */,
 				5265898120CA6D8C004AB7E7 /* LaunchScreen.storyboard in Resources */,
 				5265898E20CA6F24004AB7E7 /* PodFile in Resources */,
 				5265897E20CA6D8C004AB7E7 /* Assets.xcassets in Resources */,
 				5265897C20CA6D8B004AB7E7 /* Main.storyboard in Resources */,
-				5265898B20CA6DEA004AB7E7 /* PTSliderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,13 +374,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P3Y6F2LC5;
 				INFOPLIST_FILE = PTSliderViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengpingjun.PTSliderViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,13 +394,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P3Y6F2LC5;
 				INFOPLIST_FILE = PTSliderViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pengpingjun.PTSliderViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

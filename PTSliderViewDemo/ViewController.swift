@@ -37,11 +37,12 @@ class ViewController: UIViewController {
         // 设置滑块文字是否向右缩进Thumb宽度,默认False，需要优先于其他属性配置
         slider.isTextIndentThumbWidth = true
         
-        // 设置滑块文字/图片,文字长度为0时，thumbImageView将自动居中且边距为0，同理图片为空时，文字也将自动居中且边距为0
+        // 设置滑块Thumb文字/图片,文字长度为0时，thumbImageView将自动居中且边距为0，同理图片为空时，文字也将自动居中且边距为0
         slider.setThumbImage(#imageLiteral(resourceName: "slider_thumb"))
 //        slider.setThumbImage(nil)
         slider.setThumbText("")
 //        slider.setThumbText("123")
+        
         // 设置文字
         slider.setText(text: "请滑动滑块到最右侧")
         // 设置文字颜色（不渐变）
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
         let startColor = TextColorRGB(red: 255, green: 255, blue: 255, alpha: 1)
         let endColor = TextColorRGB(red: 0, green: 0, blue: 0, alpha: 1)
         slider.setTextColor(minRGB: startColor, maxRGB: endColor)
+        
         // 设置左侧滑轨颜色
         slider.setLeftViewColor(UIColor(red: 24/255.0, green: 181/255.0, blue: 132/255.0, alpha: 1.0))
         // 设置右侧滑轨颜色

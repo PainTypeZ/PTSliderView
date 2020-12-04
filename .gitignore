@@ -6,6 +6,9 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## system
+.DS_Store
+
 ## Build generated
 build/
 DerivedData/
@@ -45,8 +48,8 @@ playground.xcworkspace
 
 # CocoaPods - Refactored to standalone file
 Pods
+Podfile.lock
 !Podfile
-!Podfile.lock
 # Carthage - Refactored to standalone file
 
 # fastlane

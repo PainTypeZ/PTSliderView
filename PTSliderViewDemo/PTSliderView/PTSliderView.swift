@@ -8,15 +8,15 @@
 
 import UIKit
 // PTSliderViewDelegate协议
-protocol PTSliderViewDelegate:NSObjectProtocol {
-    func sliderEndValueChanged(slider:PTSliderView) // 发送滑动结束时的滑块value
-    func sliderValueChanging(slider:PTSliderView) // 发送滑动过程的滑块value, 可选
+protocol PTSliderViewDelegate: AnyObject {
+    func sliderEndValueChanged(slider: PTSliderView) // 发送滑动结束时的滑块value
+    func sliderValueChanging(slider: PTSliderView) // 发送滑动过程的滑块value, 可选
     func sliderBeganTouch() // 触摸开始，可选
     func sliderEndTouch() // 触摸结束，可选
 }
 // 可选代理方法
 extension PTSliderViewDelegate {
-    func sliderValueChanging(slider:PTSliderView) {
+    func sliderValueChanging(slider: PTSliderView) {
         
     }
     func sliderBeganTouch() {
@@ -35,9 +35,9 @@ struct TextColorRGB {
     var alpha:CGFloat
 }
 // 常量
-private let sliderBorderWidth:CGFloat = 0.2 //默认边框为2
+private let sliderBorderWidth: CGFloat = 0.2 //默认边框为2
 private let sliderBorderColor = UIColor.black //默认边框颜色
-private let thumbAnimationSpeed:TimeInterval = 0.3//默认Thumb动画移速
+private let thumbAnimationSpeed: TimeInterval = 0.3//默认Thumb动画移速
 private let leftViewColor = UIColor.orange //默认滑过颜色
 private let sliderBackgroundColor = UIColor.darkGray //默认未滑过颜色
 private let thumbColor = UIColor.lightGray //默认Thumb颜色
@@ -59,14 +59,14 @@ class PTSliderView: UIView {
     @IBOutlet weak var thumbLabelLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var thumbImageViewTrailingConstraint: NSLayoutConstraint!
     
-    var isTextIndentThumbWidth:Bool = false {
+    var isTextIndentThumbWidth: Bool = false {
         didSet {
             labelLeadingConstraint.constant = thumbView.bounds.width
         }
     }
     
     // slider的值
-    private(set) var value:CGFloat = 0.0 {
+    private(set) var value: CGFloat = 0.0 {
         didSet {
             guard isTextFade == true else {
                 return
@@ -80,7 +80,7 @@ class PTSliderView: UIView {
         }
     }
     // 是否隐藏thumb
-    private var isThumbHidden:Bool = false {
+    private var isThumbHidden: Bool = false {
         didSet {
             if isThumbHidden == true {
                 thumbView.isHidden = true
@@ -90,18 +90,18 @@ class PTSliderView: UIView {
         }
     }
     // thumb是否自动返回起点
-    private var thumbBack:Bool = true
+    private var thumbBack: Bool = true
     
     // slider是否需要文字渐变
     var isTextFade = false
     // slider最小值时的文字颜色
-    private var minValueTextColorRGB:TextColorRGB = TextColorRGB(red: 133/255.0, green: 133/255.0, blue: 133/255.0, alpha: 1.0)
+    private var minValueTextColorRGB: TextColorRGB = TextColorRGB(red: 133/255.0, green: 133/255.0, blue: 133/255.0, alpha: 1.0)
     // slider最大值时的文字颜色
-    private var maxValueTextColorRGB:TextColorRGB = TextColorRGB(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
+    private var maxValueTextColorRGB: TextColorRGB = TextColorRGB(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
     // 用于计算滑块移动距离的参考点（触摸点）
     private var originalPoint = CGPoint(x:0, y:0)
     // 代理
-    weak var delegate:PTSliderViewDelegate?
+    weak var delegate: PTSliderViewDelegate?
     
     // 必须从加载xib初始化，还未兼容frame
     override func awakeFromNib() {
@@ -120,19 +120,19 @@ class PTSliderView: UIView {
     }
     // MARK: - Intetnal Functions
     // 设置Thumb背景色
-    func setThumbBackGroundColor(_ color:UIColor) {
+    func setThumbBackGroundColor(_ color: UIColor) {
         thumbView.backgroundColor = color
     }
     // 设置thumbLabel和thumbImageView的间距
-    func setThumbContentViewSpacing(_ constant:CGFloat) {
+    func setThumbContentViewSpacing(_ constant: CGFloat) {
         thumbContentViewSpacingConstraint.constant = constant
     }
     // 设置thumbLabel的左边距
-    func setThumbLabelLeadingSpacing(_ constant:CGFloat) {
+    func setThumbLabelLeadingSpacing(_ constant: CGFloat) {
         thumbLabelLeadingConstraint.constant = constant
     }
     // 设置thumbImageView的右边距
-    func setThumbImageViewTrailingSpacing(_ constant:CGFloat) {
+    func setThumbImageViewTrailingSpacing(_ constant: CGFloat) {
         thumbImageViewTrailingConstraint.constant = constant
     }
     // 快捷设置thumb只有单一控件的约束
@@ -160,7 +160,7 @@ class PTSliderView: UIView {
         }
     }
     // 设置Thumb文字
-    func setThumbText(_ text:String) {
+    func setThumbText(_ text: String) {
         thumbTextLabel.text = text
         if text.isEmpty == true {
             setThumbWithoutSpacing()
@@ -168,11 +168,11 @@ class PTSliderView: UIView {
             setThumbWithSapcing()
         }
     }
-    func setThumbTextColor(color:UIColor) {
+    func setThumbTextColor(color: UIColor) {
         thumbTextLabel.textColor = color
     }
     // 设置滑块thumb图像
-    func setThumbImage(_ image:UIImage?) {
+    func setThumbImage(_ image: UIImage?) {
         thumbImageView.image = image
         if image == nil {
             setThumbWithoutSpacing()
@@ -181,15 +181,15 @@ class PTSliderView: UIView {
         }
     }
     // 设置边框颜色
-    func setBorderColor(_ color:UIColor) {
+    func setBorderColor(_ color: UIColor) {
         layer.borderColor = color.cgColor
     }
     // 设置左滑轨颜色
-    func setLeftViewColor(_ color:UIColor) {
+    func setLeftViewColor(_ color: UIColor) {
         leftView.backgroundColor = color
     }
     // 设置右滑轨颜色（slider底部背景色）
-    func setRightViewColor(_ color:UIColor) {
+    func setRightViewColor(_ color: UIColor) {
         backgroundColor = color
     }
     // 设置滑块滑动至最大位置
@@ -213,7 +213,7 @@ class PTSliderView: UIView {
         setSliderValue(value: 0, isAnimated: true)
     }
     // 设置滑块滑动到指定位置
-    func setSliderValue(value:CGFloat, isAnimated: Bool) {
+    func setSliderValue(value: CGFloat, isAnimated: Bool) {
         self.originalPoint = CGPoint(x: 0, y: 0)
         self.value = value
         if self.value >= 1 {
@@ -226,27 +226,27 @@ class PTSliderView: UIView {
         slideAnimation(point: point, isAnimated: isAnimated)
     }
     // 设置文字
-    func setText(text:String) {
+    func setText(text: String) {
         textLabel.text = text
     }
     // 设置文字字体
-    func setFont(font:UIFont) {
+    func setFont(font: UIFont) {
         textLabel.font = font
     }
     // 设置文字颜色变化范围（min和max参数传一样的则不改变颜色）
-    func setTextColor(minRGB:TextColorRGB, maxRGB:TextColorRGB) {
+    func setTextColor(minRGB: TextColorRGB, maxRGB: TextColorRGB) {
         isTextFade = true
         minValueTextColorRGB = minRGB
         maxValueTextColorRGB = maxRGB
         textLabel.textColor = UIColor(red: minRGB.red/255.0, green: minRGB.green/255.0, blue: minRGB.blue/255.0, alpha: minRGB.alpha)
     }
-    func setTextColor(_ color:UIColor) {
+    func setTextColor(_ color: UIColor) {
         isTextFade = false
         textLabel.textColor = color
     }
     // MARK: - Privte Functions
     // 滑动事件
-    private func slideAnimation(point:CGPoint, isAnimated:Bool) {
+    private func slideAnimation(point: CGPoint, isAnimated: Bool) {
         var movePoint = point
         movePoint.x -= originalPoint.x
         if movePoint.x <= 0 {
